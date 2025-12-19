@@ -11,16 +11,16 @@ public class OrderEventProducer {
 
     private static final String TOPIC = "order-events";
 
-    private final kafkaTemplate<String, Object> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public OrderEventProducer(kafkaTemplate<String, Object> kafkaTemplate) {
+    public OrderEventProducer(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
     public void publishOrderCreatedEvent(OrderCreatedEvent event) {
 
         String key = event.getAggregateId(); //order id
-        kafkaTemplate.send(TOPIC, key, event);
+        kafkaTemplate.send(TOPIC, key, event.toString());
     }
-    
+
 }
