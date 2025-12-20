@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/sriharsha032001/order-service-and-payment-system.git
     targetRevision: develop
-    path: k8s/order-service/payment-service
+    path: k8s/payment-service
 
   destination:
     server: https://kubernetes.default.svc
