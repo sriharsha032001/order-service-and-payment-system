@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/sriharsha032001/event-driven-order-and-payments.git
+    repoURL: https://github.com/sriharsha032001/order-service-and-payment-system.git
     targetRevision: develop
     path: k8s/order-service/payment-service
 
