@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payment-service
-          image: sriharsha032001/payment-service:1.0.0
+          image: sriharsha032001/payment-service:1.0.1
           ports:
             - containerPort: 8082
           env:
