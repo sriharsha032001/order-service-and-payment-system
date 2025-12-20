@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/sriharsha032001/event-driven-order-and-payments.git
     targetRevision: develop
-    path: k8s/payment-service
+    path: k8s/order-service/payment-service
 
   destination:
     server: https://kubernetes.default.svc
