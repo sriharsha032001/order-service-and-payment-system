@@ -1,6 +1,9 @@
 package com.payment_service.payment_service.consumer;
+
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+
+import com.payment_service.payment_service.service.PaymentService;
 @Component
 public class OrderEventConsumer {
 

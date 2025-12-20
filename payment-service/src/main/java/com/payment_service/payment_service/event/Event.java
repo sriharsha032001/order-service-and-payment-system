@@ -1,4 +1,4 @@
-package main.java.com.payment_service.payment_service.event;
+package com.payment_service.payment_service.event;
 
 public interface Event {
 

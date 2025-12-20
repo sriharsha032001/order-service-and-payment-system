@@ -3,8 +3,8 @@ package com.payment_service.payment_service.producer;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import main.java.com.payment_service.payment_service.event.PaymentFailedEvent;
-import main.java.com.payment_service.payment_service.event.PaymentSuccessEvent;
+import com.payment_service.payment_service.event.PaymentFailedEvent;
+import com.payment_service.payment_service.event.PaymentSuccessEvent;
 
 @Component
 public class PaymentEventProducer {

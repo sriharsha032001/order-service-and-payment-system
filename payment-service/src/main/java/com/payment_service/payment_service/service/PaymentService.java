@@ -5,9 +5,11 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import main.java.com.payment_service.payment_service.event.PaymentFailedEvent;
-import main.java.com.payment_service.payment_service.event.PaymentSuccessEvent;
-import main.java.com.payment_service.payment_service.producer.PaymentEventProducer;
+import org.springframework.stereotype.Service;
+
+import com.payment_service.payment_service.event.PaymentFailedEvent;
+import com.payment_service.payment_service.event.PaymentSuccessEvent;
+import com.payment_service.payment_service.producer.PaymentEventProducer;
 
 @Service
 public class PaymentService {
@@ -43,7 +45,7 @@ public class PaymentService {
                                 UUID.randomUUID().toString()
                         );
 
-                producer.publishPaymentSuccess(successEvent);
+                paymentEventProducer.publishPaymentSuccess(successEvent);
             } else {
                 handleFailure(orderEventMessage, retryCount, "Payment gateway failure");
             }
@@ -64,7 +66,7 @@ public class PaymentService {
                             false
                     );
 
-            producer.publishPaymentFailure(failedEvent);
+            paymentEventProducer.publishPaymentFailure(failedEvent);
         }
     }
     private String extractOrderId(String message) {
